@@ -9,7 +9,7 @@ const production = {
     timezone: "+09:00",
   },
   SESSION_SECRET: "ThisIsReallySecret",
-  API_PORT: 80,
+  API_PORT: 3001,
 };
 
 const development = {
