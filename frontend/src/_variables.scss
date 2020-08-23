@@ -1,3 +1,10 @@
+$main-link-start: #9574ca;
+$main-link-end: #b09ad3;
+$main-link-text: white;
+$main-link-start-hover: darken($main-link-start, 12);
+$main-link-end-hover: darken($main-link-end, 12);
+$main-link-text-hover: darken($main-link-text, 12);
+
 @mixin box-shadow() {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }

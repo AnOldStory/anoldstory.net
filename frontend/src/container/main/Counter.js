@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 
-const MainCounter = ({ msg }) => {
+const Counter = ({ msg }) => {
   const [value, setValue] = useState(0);
   useEffect(() => {
-    console.log("effect start" + value);
+    console.log("effect start11" + value);
     return () => {
       console.log("effect end" + value);
     };
+    
   }, [value]);
 
   const handleChange = (event) => setValue(event.target.value);
@@ -22,4 +23,4 @@ const MainCounter = ({ msg }) => {
   );
 };
 
-export default MainCounter;
+export default Counter;
