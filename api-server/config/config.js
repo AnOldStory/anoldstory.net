@@ -1,29 +1,30 @@
 const production = {
   DATABASE: {
-    host: "anoldstory.net",
+    host: "220.94.42.246",
     port: "3306",
-    user: "admin",
-    password: "password",
-    database: "database_name",
-    dialect: "mysql",
+    user: "skydb",
+    password: "dbsky",
+    database: "anoldstorydb",
+    dialect: "postgres",
     timezone: "+09:00",
   },
   SESSION_SECRET: "ThisIsReallySecret",
-  API_PORT: 3001,
+  API_PORT: 80,
 };
 
 const development = {
   DATABASE: {
-    host: "anoldstory.net",
+    host: "220.94.42.246",
     port: "3306",
-    user: "admin",
-    password: "password",
-    database: "database_name",
-    dialect: "mysql",
+    user: "skydb",
+    password: "dbsky",
+    database: "anoldstorydb",
+    dialect: "postgres",
     timezone: "+09:00",
   },
   SESSION_SECRET: "ThisIsMySecret",
-  API_PORT: 3001,
+  API_PORT: 80,
 };
 
-module.exports = process.env.NODE_ENV == "production" ? production : development;
+module.exports =
+  process.env.NODE_ENV == "production" ? production : development;

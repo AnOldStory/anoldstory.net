@@ -1,12 +1,21 @@
 var path = require("path");
 var indexRouter = require("./index");
+var pingRouter = require("./ping/ping");
+var messageRouter = require("./message/message");
 
 /* router  */
 module.exports = (app) => {
   app.use("/api", indexRouter);
 
+  app.use("/ping", pingRouter);
+
+  app.use("/message", messageRouter);
+
+  /* static file */
   app.use("*", (req, res, next) => {
-    res.sendFile(path.join(__dirname, "..", "..", "frontend", "build", "index.html"));
+    res.sendFile(
+      path.join(__dirname, "..", "..", "frontend", "build", "index.html")
+    );
   });
 
   // error handler

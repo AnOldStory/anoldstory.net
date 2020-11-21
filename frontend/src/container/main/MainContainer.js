@@ -32,6 +32,10 @@ let linkObj = [
     dest: "mailto:hc9904@naver.com",
     msg: [<FontAwesomeIcon icon={faEnvelope} />, " E-mail <hc9904@naver.com>"],
   },
+  {
+    dest: "https://code.anoldstory.net",
+    msg: "test page",
+  }
 ];
 
 class MainContainer extends Component {

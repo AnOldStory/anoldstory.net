@@ -6,33 +6,34 @@ var logger = require("morgan");
 
 var compression = require("compression");
 var helmet = require("helmet");
-// var cors = require("cors"); yarn add cors
+var cors = require("cors");
 
 /* Config */
 // var config = require("../config/config");
-// var mainSequelize = require("./models/index");
+var mainSequelize = require("./models/index");
 
 var app = express();
 
-/* Load Modules*/
+/* Load Modules */
 app.use(compression());
 app.use(helmet());
-// app.use(cors());
+app.use(cors());
 
 app.use(logger("dev"));
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "..", "frontend", "build")));
 
-// mainSequelize.sequelize
-//   .sync()
-//   .then(() => {
-//     console.log("DB Connected!");
-//   })
-//   .catch((err) => {
-//     console.log("DB Error : ", err);
-//   });
+mainSequelize.sequelize
+  .sync()
+  .then(() => {
+    console.log("DB Connected!");
+  })
+  .catch((err) => {
+    console.log("DB Error : ", err);
+  });
 
 /* Router */
 var routes = require("./routes/routes");
