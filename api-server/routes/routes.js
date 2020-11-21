@@ -1,11 +1,11 @@
 var path = require("path");
-var indexRouter = require("./index");
-var pingRouter = require("./ping/ping");
-var messageRouter = require("./message/message");
+var apiRouter = require("./api");
+var pingRouter = require("./ping");
+var messageRouter = require("./message");
 
 /* router  */
 module.exports = (app) => {
-  app.use("/api", indexRouter);
+  app.use("/api", apiRouter);
 
   app.use("/ping", pingRouter);
 
@@ -23,8 +23,9 @@ module.exports = (app) => {
     res.locals.message = err.message;
     res.locals.error = req.app.get("env") === "development" ? err : {};
     console.log(err);
+    //{ status: 500, where: "PingDB", info: e }
     // render the error page
-
+    res.set({ status: err.status });
     res.send(err);
   });
 };

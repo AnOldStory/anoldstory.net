@@ -6,9 +6,6 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/", (req, res, next) => {
-  console.log("hello");
-  console.log(req.rawbody);
-  console.log(req.body);
   res.json({ statusCode: 200, msg: "hello" });
 });
 
