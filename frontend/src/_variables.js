@@ -1,9 +1,10 @@
 const production = {
-  API_URL: "https://api.anoldstory.net",
+  API_URL: "http://api.anoldstory.com",
 };
 
 const development = {
-  API_URL: "http://localhost:3001",
+  API_URL: "http://api.anoldstory.com",
 };
 
-module.exports = process.env.NODE_ENV === "production" ? production : development;
+module.exports =
+  process.env.NODE_ENV === "production" ? production : development;

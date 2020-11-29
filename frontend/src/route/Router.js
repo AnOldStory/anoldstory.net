@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import MainContainer from "container/main/MainContainer";
+
+import AdminRouter from "./AdminRouter";
+import PublicRouter from "./PublicRouter";
 
 class Router extends Component {
   render() {
@@ -8,9 +10,11 @@ class Router extends Component {
       <BrowserRouter basename="/">
         <>
           <Switch>
-            hello
-            <Route exact path="/" component={MainContainer} />
-            <Route path="/hello" render={(props) => "<Hello {...props} />"} />
+            <Route
+              path="/admin"
+              render={(props) => <AdminRouter {...props} />}
+            />
+            <Route path="/" render={(props) => <PublicRouter {...props} />} />
           </Switch>
         </>
       </BrowserRouter>
