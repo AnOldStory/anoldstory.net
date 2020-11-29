@@ -1,0 +1,61 @@
+@import "_variables.scss";
+
+.navigation {
+  @include box-shadow();
+}
+
+.nav-sub {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.nav-block {
+  border: 2px solid #fff;
+  flex: 1 2 auto;
+
+  &:not(:first-child) {
+    border-left: none;
+  }
+
+  .nav-sub {
+    position: absolute;
+    left: 0;
+    flex-flow: column nowrap;
+    display: none;
+
+    .nav-block {
+      perspective: 1000px;
+      &:not(:first-child) {
+        border-top: none;
+        border-left: 2px solid #fff;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+
+    .nav-sub {
+      display: block;
+    }
+  }
+}
+
+.nav-btn {
+  display: block;
+  padding: 16px;
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+
+  cursor: pointer;
+  background-color: black;
+}
+
+@for $i from 0 through 4 {
+  .nav-ani-#{$i} {
+    @include scaleZ($i);
+  }
+}
