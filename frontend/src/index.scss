@@ -1,5 +1,19 @@
 @import "_variables.scss";
 
+/* a tag */
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.footer:focus {
+  outline: none;
+}
+
+body {
+  // background-color: pink;
+}
+
 /* Scroll width */
 ::-webkit-scrollbar {
   width: 5px;
