@@ -19,8 +19,6 @@ const MessageContainer = () => {
 
   return (
     <div>
-      <div>Message Page</div>
-      <br />
       <table className="styled-table">
         <thead>
           <tr>

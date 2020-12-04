@@ -13,22 +13,9 @@
 }
 
 .main-link-span {
-  color: $main-link-text;
-  text-align: center;
-  background: linear-gradient(15deg, $main-link-start, $main-link-end);
   border-radius: 30px;
   padding: 16px;
 
-  @include box-shadow;
-}
-
-.main-link-span:hover {
-  color: $main-link-text-hover;
-  background: linear-gradient(
-    15deg,
-    $main-link-start-hover,
-    $main-link-end-hover
-  );
-
+  @include btn;
   @include box-shadow;
 }

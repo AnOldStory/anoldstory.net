@@ -19,8 +19,6 @@ const PingContainer = () => {
 
   return (
     <div>
-      <div>Ping Page</div>
-      <br />
       <table className="styled-table">
         <thead>
           <tr>
