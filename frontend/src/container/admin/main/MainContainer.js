@@ -5,13 +5,7 @@ import React from "react";
 import "./Main.scss";
 
 const MainContainer = () => {
-  return (
-    <div>
-      Admin Page
-      <div>Ping</div>
-      <div>Message</div>
-    </div>
-  );
+  return <div>Admin Page</div>;
 };
 
 export default MainContainer;

@@ -53,9 +53,9 @@ const MainContainer = () => {
   return (
     <div>
       HyeongChang Lee
-      {linkObj.map((element, idx) => (
-        <Link key={idx} {...element} />
-      ))}
+        {linkObj.map((element, idx) => (
+          <Link key={idx} {...element} />
+        ))}
       <a href="/admin">
         <FontAwesomeIcon key="i" icon={faMousePointer} /> Click
       </a>

@@ -13,9 +13,10 @@
 }
 
 .main-link-span {
-  border-radius: 30px;
   padding: 16px;
 
   @include btn;
   @include box-shadow;
 }
+
+//https://moderncss.dev/
