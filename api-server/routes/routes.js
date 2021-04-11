@@ -2,6 +2,7 @@ var path = require("path");
 var apiRouter = require("./api");
 var pingRouter = require("./ping");
 var messageRouter = require("./message");
+var stockRouter = require("./stock");
 
 /* router  */
 module.exports = (app) => {
@@ -10,6 +11,8 @@ module.exports = (app) => {
   app.use("/ping", pingRouter);
 
   app.use("/message", messageRouter);
+
+  app.use("/stock", stockRouter);
 
   /* static file */
   app.use("*", (req, res, next) => {

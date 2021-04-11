@@ -13,7 +13,7 @@ const NavigationSub = ({ list }) => {
               </Link>
             ) : (
               <a className="nav-btn" href={info.dest !== "" ? info.dest : "#"}>
-                > {info.msg}
+                {">"} {info.msg}
               </a>
             )}
             {Array.isArray(info.sub) && info.sub.length === 0 ? (

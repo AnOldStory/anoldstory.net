@@ -6,6 +6,8 @@ import MessageContainer from "container/admin/message/MessageContainer";
 
 import PingContainer from "container/admin/ping/PingContainer";
 
+import StockContainer from "container/admin/stock/StockContainer";
+
 import Navigation from "container/common/navigation/Navigation";
 
 let list = [
@@ -14,15 +16,15 @@ let list = [
     msg: "Direct",
     sub: [
       {
-        dest: "http://220.94.42.246:8081",
-        msg: "Code",
+        dest: "http://main.anoldstory.com",
+        msg: "Main",
         sub: [],
       },
-      {
-        dest: "http://220.94.42.246:8080",
-        msg: "Dev Page",
-        sub: [],
-      },
+      // {
+      //   dest: "http://220.94.42.246:8080",
+      //   msg: "Dev Page",
+      //   sub: [],
+      // },
     ],
   },
   {
@@ -35,6 +37,11 @@ let list = [
     msg: "Message",
     sub: [],
   },
+  {
+    dest: "/admin/stock",
+    msg: "Stock",
+    sub: [],
+  },
 ];
 
 const AdminRouter = ({ match: { url } }) => {
@@ -45,6 +52,7 @@ const AdminRouter = ({ match: { url } }) => {
         <Route exact path={url} component={MainContainer} />
         <Route exact path={url + "/message"} component={MessageContainer} />
         <Route exact path={url + "/ping"} component={PingContainer} />
+        <Route exact path={url + "/stock"} component={StockContainer} />
         <Redirect path="*" to="/admin" />
       </Switch>
     </>

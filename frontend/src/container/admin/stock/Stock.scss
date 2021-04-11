@@ -1,0 +1,19 @@
+@import "_variables.scss";
+
+.stock-btn {
+  cursor: pointer;
+}
+
+.stock-remove {
+  color: red;
+}
+
+.stock-list {
+  margin: 0 auto;
+}
+
+.stock-block {
+  margin: 2px;
+  background: gray;
+  border-radius: 10px;
+}

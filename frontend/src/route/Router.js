@@ -4,13 +4,35 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import AdminRouter from "./AdminRouter";
 import PublicRouter from "./PublicRouter";
 
+/* hotkey */
+
 class Router extends Component {
-  handleFooter(e) {
-    console.log(e.key);
-    if (e.key === "d") {
-      window.location.replace("/admin");
+  _handleKeyDown = (event) => {
+    switch (event.key) {
+      case "q":
+        window.location.replace("/");
+        break;
+      case "a":
+        window.location.replace("/admin");
+        break;
+      case "s":
+        window.location.replace("/admin/stock");
+        break;
+      case "d":
+        window.location.replace("/admin/message");
+        break;
+      default:
+        break;
     }
+  };
+  componentDidMount() {
+    document.addEventListener("keydown", this._handleKeyDown);
   }
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this._handleKeyDown);
+  }
+
   render() {
     return (
       <BrowserRouter basename="/">
@@ -18,15 +40,6 @@ class Router extends Component {
           <Route path="/admin" render={(props) => <AdminRouter {...props} />} />
           <Route path="/" render={(props) => <PublicRouter {...props} />} />
         </Switch>
-        <div
-          type="hidden"
-          className="footer"
-          ref={(i) => {
-            i.focus();
-          }}
-          tabIndex="1"
-          onKeyDown={this.handleFooter}
-        />
       </BrowserRouter>
     );
   }

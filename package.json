@@ -18,5 +18,9 @@
   },
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "global": "^4.4.0",
+    "node-sass": "^5.0.0"
   }
 }
